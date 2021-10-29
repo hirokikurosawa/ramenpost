@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+  namespace :users do
+    get 'likes/index'
+    get 'likes/creat'
+    get 'likes/destroy'
+  end
+  namespace :users do
+    get 'posts/index'
+    get 'posts/new'
+    get 'posts/creat'
+    get 'posts/show'
+    get 'posts/destroy'
+    get 'posts/following_posts'
+    get 'posts/search'
+  end
+  namespace :users do
+    get 'users/show'
+    get 'users/check'
+    get 'users/destroy'
+  end
+  namespace :users do
+    get 'hoems/top'
+    get 'hoems/about'
+  end
   namespace :admins do
     get 'users/index'
     get 'users/show'

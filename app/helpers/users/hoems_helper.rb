@@ -1,0 +1,2 @@
+module Users::HoemsHelper
+end
