@@ -25,23 +25,23 @@ ActiveRecord::Schema.define(version: 2021_11_01_051211) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.string "post_id"
-    t.string "like_user_id"
+    t.integer "post_id"
+    t.integer "like_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "user_id"
-    t.string "posted_image"
-    t.text "posted_content"
+    t.integer "user_id"
+    t.string "post_image_id"
+    t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.string "user_id"
-    t.string "followed_id"
+    t.integer "user_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
