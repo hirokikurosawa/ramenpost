@@ -1,2 +1,8 @@
-<h1>Admins::Homes#top</h1>
-<p>Find me in app/views/admins/homes/top.html.erb</p>
+<h1>管理者トップページ</h1>
+<% @posts.each do |post| %>
+<div>
+    <%= attachment_image_tag post, :post_image, :fill, 200, 200, format: 'jpg' %>
+    <p><%= post.introduction %></p>
+    <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+</div>
+<% end %>
