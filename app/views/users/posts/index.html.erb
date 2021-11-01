@@ -5,5 +5,6 @@
     <%= attachment_image_tag post, :post_image, :fill, 200, 200, format: 'jpg' %>
     <p><%= post.introduction %></p>
     <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+    <%= link_to '詳しく見る', post_path(post.id) %>
 </div>
 <% end %>
