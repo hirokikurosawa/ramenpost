@@ -3,3 +3,6 @@
 <p>投稿文：<%= @post.introduction %></p>
 <p>投稿日時：<%= @post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
 <p>投稿ユーザー：<%= @post.user.name %></p>
+<% if @post.user == current_user %>
+  <%= link_to "削除", post_path(@post), method: :delete %>
+<% end %>
