@@ -22,10 +22,10 @@
             <%= link_to "最新投稿一覧", admins_path %>
           </li>
           <li>
-            <%= link_to "ユーザ一覧", admins_user_path %>
+            <%= link_to "ユーザ一覧", admins_users_path %>
           </li>
           <li>
-            <%= link_to "ログアウト", destroy_admin_session_path %>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
           </li>
           <% elsif user_signed_in? %>
           <li>
@@ -38,7 +38,7 @@
             <%= link_to "マイページ", user_path(current_user.id) %>
           </li>
           <li>
-            <%= link_to "ログアウト", destroy_user_session_path %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
           <% else %>
           <li>
