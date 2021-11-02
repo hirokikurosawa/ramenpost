@@ -1,2 +1,4 @@
 <h1>マイページ</h1>
+<%= link_to "フォロー中", relationships_path %>
 <%= link_to "アカウントを削除する", check_users_path %>
+<%= render 'users/relationships/follow_button', user: @user %>
