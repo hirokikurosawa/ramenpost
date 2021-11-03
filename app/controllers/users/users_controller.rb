@@ -16,6 +16,9 @@ class Users::UsersController < ApplicationController
     #reset_session
     #redirect_to root_path
   end
+  
+  def following
+  end
 
   private
 
