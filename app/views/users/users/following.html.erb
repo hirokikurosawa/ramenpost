@@ -1,1 +1,4 @@
 <h1>フォローユーザー一覧</h1>
+<% @users.each do |user| %>
+<p><%= user.nickname %></p>
+<% end %>

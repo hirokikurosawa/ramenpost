@@ -18,6 +18,8 @@ class Users::UsersController < ApplicationController
   end
   
   def following
+    user = User.find(params[:user_id])
+    @users = user.followings
   end
 
   private

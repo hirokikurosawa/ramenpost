@@ -4,13 +4,13 @@ class Users::RelationshipsController < ApplicationController
   def create
     following = current_user.follow(@user)
     following.save
-    redirect_to user_path(@user)
+    redirect_to request.referrer || root_path
   end
 
   def destroy
     following = current_user.unfollow(@user)
     following.destroy
-    redirect_to user_path(@user)
+    redirect_to request.referrer || root_path
   end
 
   private
@@ -18,5 +18,5 @@ class Users::RelationshipsController < ApplicationController
   def set_user
     @user = User.find(params[:follow_id])
   end
-
+  
 end
