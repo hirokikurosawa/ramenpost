@@ -1,6 +1,10 @@
 <h1>ユーザー一覧</h1>
 <% @users.each do |user| %>
 <div><%= user.id %></div>
-<div><%= user.name %></div>
+<div>
+  <%= link_to admins_user_path(user) do %>
+    <%= user.name %>
+  <% end %>
+</div>
 <div><%= user.nickname %></div>
 <% end %>
