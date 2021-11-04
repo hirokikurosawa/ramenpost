@@ -28,4 +28,9 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  
+  #いいね機能のメソッド
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

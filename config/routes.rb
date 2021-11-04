@@ -33,12 +33,14 @@ Rails.application.routes.draw do
       end
     end
     resources :posts, only: [:index, :new, :create, :show, :destroy] do
+      resource :likes, only: [ :create, :destroy]
       collection do
         get :following_posts
+        get :likes_posts
         get :search
       end
     end
     resources :relationships, only: [:create, :destroy]
-    resources :likes, only: [:index, :create, :destroy]
+    #resources :likes, only: [:index, :create, :destroy]
   end
 end
