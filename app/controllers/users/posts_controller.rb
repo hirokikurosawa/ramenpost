@@ -25,6 +25,7 @@ class Users::PostsController < ApplicationController
   end
 
   def following_posts
+    @posts = Post.where(user_id: [current_user.id, *current_user.following_ids])
   end
 
   def search
