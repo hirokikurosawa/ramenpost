@@ -2,7 +2,12 @@
 <%= attachment_image_tag @post, :post_image, :fill, 200, 200, format: 'jpg' %>
 <p>投稿文：<%= @post.introduction %></p>
 <p>投稿日時：<%= @post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-<p>投稿ユーザー：<%= @post.user.name %></p>
+<p>
+  投稿ユーザー：
+  <%= link_to user_path(@post.user) do %>
+    <%= @post.user.nickname %>
+  <% end %>
+</p>
 <%= render'users/likes/likes_button', post:@post %>
 <% if @post.user == current_user %>
   <%= link_to "削除", post_path(@post), method: :delete %>
