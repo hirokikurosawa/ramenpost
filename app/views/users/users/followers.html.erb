@@ -1,5 +1,2 @@
 <h1>フォロワー</h1>
-<% @users.each do |user| %>
-<p><%= user.nickname %></p>
-<%= render 'users/relationships/follow_button', user: user %>
-<% end %>
+<%= render 'users/users/followings_followers', users: @users %>
