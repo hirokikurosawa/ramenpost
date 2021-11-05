@@ -28,6 +28,8 @@ class Users::PostsController < ApplicationController
   end
 
   def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
   private
