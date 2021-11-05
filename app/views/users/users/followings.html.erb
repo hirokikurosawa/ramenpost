@@ -1,4 +1,5 @@
 <h1>フォローユーザー一覧</h1>
 <% @users.each do |user| %>
 <p><%= user.nickname %></p>
+<%= render 'users/relationships/follow_button', user: user %>
 <% end %>

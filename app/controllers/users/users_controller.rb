@@ -1,4 +1,5 @@
 class Users::UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
   end
@@ -11,20 +12,16 @@ class Users::UsersController < ApplicationController
     @user.destroy
     flash[:notice] = 'ユーザーを削除しました。'
     redirect_to root_path
-    #@user = User.find(current_user.id)
-    #@user.update(is_active: false)
-    #reset_session
-    #redirect_to root_path
   end
-  
-  def following
-    user = User.find(params[:user_id])
+
+  def followings
+    user = User.find(params[:id])
     @users = user.followings
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:email, :encrypted_password, :name, :nickname, :icon, :introduction)
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
+
 end

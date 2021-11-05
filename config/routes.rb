@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get '/about' => 'homes#about'
     resources :users, only: [:show, :destroy] do
-      get :following
+      resource :relationships, only: [:create, :destroy]
+      get :followings, on: :member
+      get :followers, on: :member
       collection do
         get :check
       end
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
         get :search
       end
     end
-    resources :relationships, only: [:create, :destroy]
+    #resources :relationships, only: [:create, :destroy]
     #resources :likes, only: [:index, :create, :destroy]
   end
 end
