@@ -11,8 +11,8 @@
 
   <body>
     <header class="header">
-      <%= link_to root_path do %>
-        <a class="header__title">ラーメンPOST</a>
+      <%= link_to root_path, class: "header__title" do %>
+        ラーメンPOST
       <% end %>
 
       <% if user_signed_in? %>
