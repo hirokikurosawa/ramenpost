@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.form{
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #555;
+
+  &__title{
+    text-align: center;
+  }
+  &__name{
+    margin: 20px 0px 10px 0px;
+  }
+  &__field{
+    width: 300px;
+    padding: 4px;
+    font-size: 14px;
+  }
+  &__check-box{
+  }
+  &__submit{
+    text-align: right;
+  }
+}
