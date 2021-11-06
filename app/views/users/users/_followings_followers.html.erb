@@ -1,3 +1,4 @@
+<%# フォローフォロワーの部分テンプレート %>
 <% users.each do |user| %>
   <p><%= user.nickname %></p>
   <%= render 'users/relationships/follow_button', user: user %>
