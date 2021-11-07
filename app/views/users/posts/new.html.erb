@@ -1,8 +1,10 @@
-<h1 class="title">新規投稿を作成</h1>
 <%= form_with model: @post, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :post_image %>
-  <h4>コメント</h4>
-  <%= f.text_area :introduction %>
-  <%= f.submit '投稿' %>
+  <div class="form">
+    <h1 class="form__title">投稿を作成</h1>
+    <h4 class="form__name">画像</h4>
+    <%= f.attachment_field :post_image, class: "form__field" %>
+    <h4 class="form__name">コメント</h4>
+    <%= f.text_area :introduction, class: "form__field" %>
+    <div class="form__submit"><%= f.submit '投稿' %></div>
+  </div>
 <% end %>
