@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.home{
+  margin: 100px 10%;
+  &__title{
+    text-align: center;
+  }
+  &__text{
+    margin:20px 0px 20px 0px;
+    text-align: center;
+  }
+  &__link{
+    display: block;
+    width: 160px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 10vh;
+    margin: 0 auto;
+  }
+}
