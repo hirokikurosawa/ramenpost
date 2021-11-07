@@ -1,4 +1,4 @@
-<h1>アカウントの削除</h1>
+<h1 class="title">アカウントの削除</h1>
 <p>本当に削除しますか？</p>
 <%= link_to "アカウント削除しない", user_path(current_user.id) %>
 <%= link_to "アカウント削除する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %>

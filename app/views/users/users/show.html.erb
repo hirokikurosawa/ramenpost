@@ -1,4 +1,4 @@
-<h1><%= @user.nickname %></h1>
+<h1 class="title"><%= @user.nickname %></h1>
 <%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー
 <% if @user.id == current_user.id %>
   <%= link_to "アカウントを削除する", check_users_path %>
