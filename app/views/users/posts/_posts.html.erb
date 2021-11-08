@@ -1,14 +1,21 @@
 <%# 投稿一覧の部分テンプレート %>
 <% posts.each do |post| %>
-  <div>
-    <img src=<%= post.user.icon %>>
-    <p><%= post.user.nickname %></p>
-    <%= attachment_image_tag post, :post_image, :fill, 200, 200, format: 'jpg' %>
-    <p><%= post.introduction %></p>
-    <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-    <p>
+  <div class="article">
+    <% if post.user.icon? %>
+      <img src=<%= post.user.icon %> class="icon">
+    <% else %>
+      <image src="/assets/default.png" class="icon" %>
+    <% end %>
+    <p class="article__name"><%= post.user.nickname %></p>
+    <%= attachment_image_tag post, :post_image, format: 'jpg', class: "article__image" %>
+    <p class="article__button">
       <%= render'users/likes/likes_button', post:post %>
     </p>
-    <%= link_to '詳しく見る', post_path(post.id) %>
+    <p class="article__intro"><%= safe_join(post.introduction.split("\n"),tag(:br)) %></p>
+    <p class="article__date"><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+    <%= link_to '詳しく見る', post_path(post.id), class: "article__detail" %>
   </div>
 <% end %>
+<div class="pagination">
+  <%= paginate posts %>
+</div>

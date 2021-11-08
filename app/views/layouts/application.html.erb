@@ -5,12 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/6dda0aaec3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" style="z-index:10000">
       <div>
         <%= link_to root_path, class: "header__title" do %>
           ラーメンPOST
@@ -26,42 +29,42 @@
       <% end %>
 
       <nav class="header__nav">
-        <ul class="header__menu">
+        <ul class="header__list">
           <% if admin_signed_in? %>
           <li>
-            <%= link_to "最新投稿一覧", admins_path, class: "header__link" %>
+            <%= link_to "最新投稿一覧", admins_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "ユーザ一覧", admins_users_path, class: "header__link" %>
+            <%= link_to "ユーザ一覧", admins_users_path, class: "header__litem" %>
           </li>
           <li>
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header__link" %>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header__item" %>
           </li>
           <% elsif user_signed_in? %>
           <li>
-            <%= link_to "ホーム", following_posts_posts_path, class: "header__link" %>
+            <%= link_to "ホーム", following_posts_posts_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "新規投稿", new_post_path, class: "header__link" %>
+            <%= link_to "新規投稿", new_post_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "最新投稿一覧", posts_path, class: "header__link" %>
+            <%= link_to "最新投稿一覧", posts_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "マイページ", user_path(current_user.id), class: "header__link" %>
+            <%= link_to "マイページ", user_path(current_user.id), class: "header__item" %>
           </li>
           <li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__link" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__item" %>
           </li>
           <% else %>
           <li>
-            <%= link_to "サイト案内", about_path, class: "header__link" %>
+            <%= link_to "サイト案内", about_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "新規登録", new_user_registration_path, class: "header__link" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "ログイン", new_user_session_path, class: "header__link" %>
+            <%= link_to "ログイン", new_user_session_path, class: "header__item" %>
           </li>
           <% end %>
         </ul>

@@ -1,6 +1,6 @@
 class Users::PostsController < ApplicationController
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).limit(50)
   end
 
   def new
@@ -25,11 +25,11 @@ class Users::PostsController < ApplicationController
   end
 
   def following_posts
-    @posts = Post.where(user_id: [current_user.id, *current_user.following_ids])
+    @posts = Post.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order(created_at: :desc).page(params[:page]).per(20)
     @keyword = params[:keyword]
   end
 
