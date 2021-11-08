@@ -2,6 +2,13 @@ class Users::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page]).per(18)
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   def check

@@ -1,0 +1,28 @@
+<%# user情報の部分テンプレート %>
+<div class="user-info">
+  <% if user.icon? %>
+    <img src=<%= user.icon %> class="icon">
+  <% else %>
+    <image src="/assets/default.png" class="icon" %>
+  <% end %>
+  <h1 class="user-info__name"><%= user.nickname %></h1>
+  <h6 class="user-info__intro"><%= user.introduction %></h6>
+  <div class="user-info__link">
+    <%= link_to followings_user_path(user) do %>
+      フォロー<%= user.followings.count %> 人
+    <% end %>
+  </div>
+  <div class="user-info__link">
+    <%= link_to followers_user_path(user) do %>
+      フォロワー<%= user.followers.count  %> 人
+    <% end %>
+  </div>
+  <div class="user-info__link">
+    <% if user.id == current_user.id %>
+      <%= link_to "プロフィール編集", edit_user_path(user) %>
+    <% end %>
+  </div>
+  <div class="user-info__button">
+    <%= render 'users/relationships/follow_button', user: @user %>
+  </div>
+</div>

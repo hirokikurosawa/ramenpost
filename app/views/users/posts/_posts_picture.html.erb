@@ -1,0 +1,9 @@
+<div class="post-picture">
+  <% posts.each do |post| %>
+    <div class="post-picture__list">
+      <%= link_to post_path(post.id) do %>
+        <%= attachment_image_tag post, :post_image, format: 'jpg', class: "post-picture__unit" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

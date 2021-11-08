@@ -1,6 +1,5 @@
-<h1 class="title"><%= @user.nickname %></h1>
-<%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー
-<% if @user.id == current_user.id %>
-  <%= link_to "アカウントを削除する", check_users_path %>
-<% end %>
-<%= render 'users/relationships/follow_button', user: @user %>
+<%= render'users/users/user_info', user:@user %>
+<%= render'users/posts/posts_picture', posts:@posts %>
+<div class="pagination">
+  <%= paginate @posts %>
+</div>
