@@ -1,6 +1,8 @@
 <%# 投稿一覧の部分テンプレート %>
 <% posts.each do |post| %>
   <div>
+    <img src=<%= post.user.icon %>>
+    <p><%= post.user.nickname %></p>
     <%= attachment_image_tag post, :post_image, :fill, 200, 200, format: 'jpg' %>
     <p><%= post.introduction %></p>
     <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
