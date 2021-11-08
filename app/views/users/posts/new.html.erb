@@ -1,6 +1,7 @@
 <%= form_with model: @post, local:true do |f| %>
   <div class="form">
     <h1 class="form__title">投稿を作成</h1>
+    <%= flash[:alert] %>
     <h4 class="form__name">画像</h4>
     <%= f.attachment_field :post_image, class: "form__field" %>
     <h4 class="form__name">コメント</h4>

@@ -10,8 +10,12 @@ class Users::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to user_path(current_user.id)
+     if @post.save
+      redirect_to user_path(current_user.id)
+     else
+       flash[:alert] = '画像を選択してください。'
+       render action: :new
+     end
   end
 
   def show
