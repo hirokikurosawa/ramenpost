@@ -1,4 +1,8 @@
 <h1 class="title">アカウントの削除</h1>
-<p>本当に削除しますか？</p>
-<%= link_to "アカウント削除しない", user_path(current_user.id) %>
-<%= link_to "アカウント削除する", user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか？" %>
+<div class="check-page">
+  <p class="check-page__text">本当に削除しますか？</p>
+  <div class="check-page__items">
+    <%= link_to "アカウント削除しない", user_path(current_user.id), class: "check-page__cancel" %>
+    <%= link_to "アカウント削除する", user_path(current_user.id), method: :delete, class: "check-page__delete", "data-confirm" => "本当に退会しますか？" %>
+  </div>
+</div>

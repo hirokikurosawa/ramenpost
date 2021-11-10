@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.check-page{
+  width: 700px;
+  margin: 10px auto;
+  &__text{
+    margin: 50px auto;
+    text-align: center;
+    font-size: 20px;
+  }
+  &__items{
+    width: 700px;
+    text-align: center;
+  }
+  &__cancel{
+    display: inline-block;
+    width: 160px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: blue;
+    border-radius: 10vh;
+    margin: 0 auto;
+  }
+  &__delete{
+    display: inline-block;
+    width: 160px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: red;
+    border-radius: 10vh;
+    margin: 0 auto;
+  }
+}
