@@ -1,10 +1,12 @@
-<% if current_user.already_liked?(post) %>
-  <%= link_to  post_likes_path(post), method: :delete, class: "likes-button" do %>
-    <i class="fas fa-heart"></i>
+<div class="likes-button">
+  <% if current_user.already_liked?(post) %>
+    <%= link_to  post_likes_path(post), method: :delete, class: "likes-button__icon" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to  post_likes_path(post), method: :post, class: "likes-button__icon" do %>
+      <i class="far fa-heart"></i>
+    <% end %>
   <% end %>
-<% else %>
-  <%= link_to  post_likes_path(post), method: :post, class: "likes-button" do %>
-    <i class="far fa-heart"></i>
-  <% end %>
-<% end %>
-<%= post.likes.count %>
+  <%= post.likes.count %>
+</div>

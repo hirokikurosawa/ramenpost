@@ -11,7 +11,7 @@
     <p class="article__button">
       <%= render'users/likes/likes_button', post:post %>
     </p>
-    <p class="article__intro"><%= safe_join(post.introduction.split("\n"),tag(:br)) %></p>
+    <p class="article__intro"><%= post.introduction %></p>
     <p class="article__date"><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
     <%= link_to '詳しく見る', post_path(post.id), class: "article__detail" %>
   </div>

@@ -1,14 +1,20 @@
-<h1 class="title">投稿詳細</h1>
-<%= attachment_image_tag @post, :post_image, :fill, 200, 200, format: 'jpg' %>
-<p>投稿文：<%= @post.introduction %></p>
-<p>投稿日時：<%= @post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-<p>
-  投稿ユーザー：
-  <%= link_to user_path(@post.user) do %>
-    <%= @post.user.nickname %>
+<div class="detail">
+  <h1 class="detail__title">投稿詳細</h1>
+  <% if @post.user.icon? %>
+      <img src=<%= @post.user.icon %> class="icon">
+    <% else %>
+      <image src="/assets/default.png" class="icon" %>
+    <% end %>
+  <p class="detail__name">
+    <%= link_to user_path(@post.user) do %>
+      <%= @post.user.nickname %>
+    <% end %>
+  </p>
+  <%= attachment_image_tag @post, :post_image, format: 'jpg', class: "detail__image" %>
+  <div class="detail__button"><%= render'users/likes/likes_button', post:@post %></div>
+  <p class="detail__intro"><%= @post.introduction %></p>
+  <p class="detail__date"><%= @post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+  <% if @post.user == current_user %>
+    <%= link_to "投稿を削除", post_path(@post), method: :delete, class: "detail__delete", "data-confirm" => "本当に削除しますか？" %>
   <% end %>
-</p>
-<%= render'users/likes/likes_button', post:@post %>
-<% if @post.user == current_user %>
-  <%= link_to "削除", post_path(@post), method: :delete %>
-<% end %>
+</div>
