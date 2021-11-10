@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   scope module: :users do
     root to: 'homes#top'
     get '/about' => 'homes#about'
-    resources :users, only: [:show, :edit, :updaate, :destroy] do
+    resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
       get :followings, on: :member
       get :followers, on: :member
