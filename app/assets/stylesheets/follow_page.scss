@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.follow-page{
+  margin: 100px auto;
+  width: 700px;
+  &__title{
+    text-align: center;
+  }
+  &__text{
+    margin: 20px;
+    text-align: center;
+  }
+}

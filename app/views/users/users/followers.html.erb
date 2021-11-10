@@ -1,2 +1,8 @@
-<h1 class="title">フォロワー</h1>
-<%= render 'users/users/followings_followers', users: @users %>
+<div class="follow-page">
+  <h1 class="follow-page__title">フォロワー</h1>
+  <% if @users.empty? %>
+   <div class="follow-page__text">あなたをフォローしているユーザーはいません。</div>
+  <% else%>
+    <%= render 'users/users/followings_followers', users: @users %>
+  <% end %>
+</div>
