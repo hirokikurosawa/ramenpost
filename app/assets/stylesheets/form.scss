@@ -20,7 +20,12 @@
     padding: 4px;
     font-size: 14px;
   }
-  &__check-box{
+  &__icon{
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    overflow: hidden;
   }
   &__submit{
     text-align: right;
