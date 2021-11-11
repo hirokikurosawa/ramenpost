@@ -1,4 +1,10 @@
 <%= render'users/users/user_info', user:@user %>
+<ul class="list">
+  <li class="list__item">投稿</li>
+  <li class="list__item-link">
+    <%= link_to "いいね", likes_user_path(@user) %>
+  </li>
+</ul>
 <%= render'users/posts/posts_picture', posts:@posts %>
 <div class="pagination">
   <%= paginate @posts %>

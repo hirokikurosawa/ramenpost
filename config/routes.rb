@@ -31,11 +31,11 @@ Rails.application.routes.draw do
       get :followings, on: :member
       get :followers, on: :member
       get :check, on: :collection
+      get :likes, on: :member
     end
     resources :posts, only: [:index, :new, :create, :show, :destroy] do
       resource :likes, only: [ :create, :destroy]
       get :following_posts, on: :collection
-      get :likes_posts, on: :collection
       get :search, on: :collection
     end
   end

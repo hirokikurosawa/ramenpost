@@ -4,9 +4,10 @@
   box-sizing: border-box;
 }
 .user-info{
-  margin: 100px 20% 10px 20%;
+  margin: 100px auto 10px auto;
   padding: 20px;
   border: 1px solid #555;
+  width: 700px;
   &__name{
     margin-left: 85px;
     font-size: 25px;

@@ -1,0 +1,8 @@
+<%= render'users/users/user_info', user:@user %>
+<ul class="list">
+  <li class="list__item-link">
+    <%= link_to "投稿", user_path(@user) %>
+  </li>
+  <li class="list__item">いいね</li>
+</ul>
+<%= render'users/posts/posts_picture', posts:@posts %>
