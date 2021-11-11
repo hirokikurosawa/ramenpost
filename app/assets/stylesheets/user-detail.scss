@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.user-detail{
+  margin: 0 auto;
+  width: 700px;
+  &__icon{
+    display: block;
+    margin: 30px auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__nickname{
+    margin: 25px auto;
+    text-align: center;
+    font-size: 25px;
+  }
+  &__item{
+    margin: 10px 0 10px 30px;
+    font-size: 18px;
+  }
+  &__edit{
+    font-size: 18px;
+    text-align: right;
+  }
+}

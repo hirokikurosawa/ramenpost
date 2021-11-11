@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.user-table{
+  margin: 30px auto;
+  width: 700px;
+  border-spacing: 0;
+  &__id{
+    width: 100px;
+    text-align: center;
+    border-bottom: solid 2px #fb5144;
+
+  }
+  &__icon-space{
+    width: 180px;
+    border-bottom: solid 2px #ddd;
+  }
+  &__icon{
+    margin-left: 100px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden
+  }
+  &__name{
+    width: 300px;
+    border-bottom: solid 2px #ddd;
+    text-align: center;
+    font-size: 20px;
+  }
+
+}

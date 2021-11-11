@@ -1,2 +1,37 @@
-<h1 class="title">ユーザー情報編集</h1>
+<%= form_with model:@user,url: admins_user_path, local: true do |f| %>
+  <div class="form">
+    <h2 class="form__title">プロフィール編集</h2>
+    <div>
+      <p class="form__name"><%= f.label :フルネーム %></p>
+      <%= f.text_field :name, autofocus: true, class: "form__field" %>
+    </div>
+    
+    <div>
+      <p class="form__name"><%= f.label :ユーザーネーム %></p>
+      <%= f.text_field :nickname, autofocus: true, class: "form__field" %>
+    </div>
+
+    <div>
+      <p class="form__name"><%= f.label :メールアドレス %></p>
+      <%= f.text_field :email, autofocus: true, class: "form__field" %>
+    </div>
+    
+    <div>
+      <p class="form__name"><%= f.label :プロフィール写真 %></p>
+         <div>
+        <% if @user.icon? %>
+          <img src=<%= @user.icon %> class="form__icon">
+        <% else %>
+          <image src="/assets/default.png" class="form__icon" %>
+        <% end %>
+      </div>
+      <%= f.file_field :icon, class: "form__field" %>
+    </div>
+    <%= link_to "アカウント削除する", admins_user_path(@user), method: :delete,  "data-confirm" => "本当に退会しますか？" %>
+
+    <div class="form__submit">
+      <%= f.submit "保存する" %>
+    </div>
+  </div>
+<% end %>
 

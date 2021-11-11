@@ -6,12 +6,19 @@
     <% else %>
       <image src="/assets/default.png" class="icon" %>
     <% end %>
-    <p class="article__name"><%= post.user.nickname %></p>
+    <p class="article__name">
+      <%= link_to user_path(post.user) do %>
+        <%= post.user.nickname %>
+      <% end %>
+    </p>
     <%= attachment_image_tag post, :post_image, format: 'jpg', class: "article__image" %>
     <p class="article__button">
       <%= render'users/likes/likes_button', post:post %>
     </p>
-    <p class="article__intro"><%= post.introduction %></p>
+    <p class="article__intro">
+      <%# introductionの入力で改行した時、改行して表示されるようになる%>
+      <%= safe_join(post.introduction.split("\n"),tag(:br)) %>
+    </p>
     <p class="article__date"><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
     <%= link_to '詳しく見る', post_path(post.id), class: "article__detail" %>
   </div>

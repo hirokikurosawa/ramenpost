@@ -1,8 +1,24 @@
 <h1 class="title">管理者トップページ</h1>
 <% @posts.each do |post| %>
-<div>
-    <%= attachment_image_tag post, :post_image, :fill, 200, 200, format: 'jpg' %>
-    <p><%= post.introduction %></p>
-    <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-</div>
+  <div class="article">
+    <% if post.user.icon? %>
+      <img src=<%= post.user.icon %> class="icon">
+    <% else %>
+      <image src="/assets/default.png" class="icon" %>
+    <% end %>
+    <p class="article__name">
+      <%= link_to admins_user_path(post.user) do %>
+        <%= post.user.nickname %>
+      <% end %>
+    </p>
+    <%= attachment_image_tag post, :post_image, format: 'jpg', class: "article__image" %>
+    <p class="article__intro">
+      <%# introductionの入力で改行した時、改行して表示されるようになる%>
+      <%= safe_join(post.introduction.split("\n"),tag(:br)) %>
+    </p>
+    <p class="article__date"><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+  </div>
 <% end %>
+<div class="pagination">
+  <%= paginate @posts %>
+</div>

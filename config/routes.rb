@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
   scope module: :users do

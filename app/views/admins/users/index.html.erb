@@ -1,10 +1,22 @@
 <h1 class="title">ユーザー一覧</h1>
-<% @users.each do |user| %>
-<div><%= user.id %></div>
 <div>
-  <%= link_to admins_user_path(user) do %>
-    <%= user.name %>
+  <% @users.each do |user| %>
+    <table class="user-table">
+      <tr>
+        <th class="user-table__id"><%= user.id %></th>
+        <td class="user-table__icon-space">
+          <% if user.icon? %>
+            <img src=<%= user.icon %> class="user-table__icon">
+          <% else %>
+            <image src="/assets/default.png" class="user-table__icon" %>
+          <% end %>
+        </td>
+        <td class="user-table__name">
+          <%= link_to admins_user_path(user) do %>
+            <%= user.nickname %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
   <% end %>
 </div>
-<div><%= user.nickname %></div>
-<% end %>

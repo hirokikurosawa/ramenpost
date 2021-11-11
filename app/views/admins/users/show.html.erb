@@ -1,3 +1,16 @@
 <h1 class="title">ユーザー詳細画面</h1>
-<%= link_to "情報編集", edit_admins_user_path(@user) %>
+<div class="user-detail">
+  <% if @user.icon? %>
+    <img src=<%= @user.icon %> class="user-detail__icon">
+  <% else %>
+    <image src="/assets/default.png" class="user-detail__icon" %>
+  <% end %>
+  <div class="user-detail__nickname"><%= @user.nickname %></div>
+  <div class="user-detail__item">名前：<%= @user.name %></div>
+  <div class="user-detail__item">メールアドレス：<%= @user.email %></div>
+  <div class="user-detail__item">登録日時：<%= @user.created_at.strftime("%Y/%m/%d %H:%M:%S") %></div>
+  <div class="user-detail__edit">
+    <%= link_to "情報編集", edit_admins_user_path(@user) %>
+  </div>
+</div>
 
