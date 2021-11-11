@@ -1,26 +1,20 @@
 <%# フォローフォロワーの部分テンプレート %>
-<table class="follow-table">
-  <thead class="follow-table__head">
-    <tr class="follow-table__row">
-      <th class="follow-table__title">Name</th>
-      <th class="follow-table__title"></th>
+<% users.each do |user| %>
+  <table  class="follow-table">
+    <tr>
+      <td class="user-table__user">
+        <% if user.icon? %>
+          <img src=<%= user.icon %> class="follow-table__icon">
+        <% else %>
+          <image src="/assets/default.png" class="follow-table__icon" %>
+        <% end %>
+      </td>
+      <td class="follow-table__name">
+        <%= link_to user_path(user) do %>
+          <%= user.nickname %>
+        <% end %>
+      </td>
+      <td class="user-table__button"><%= render 'users/relationships/follow_button', user: user %></td>
     </tr>
-  </thead>
-  <tbody class="follow-table__body">
-    <% users.each do |user| %>
-      <tr class="follow-table__row">
-        <td class="follow-table__item">
-          <% if user.icon? %>
-            <img src=<%= user.icon %> class="follow-table__icon">
-          <% else %>
-            <image src="/assets/default.png" class="follow-table__icon" %>
-          <% end %>
-          <div  class="follow-table__name">
-            <%= user.nickname %>
-          </div>
-        </td>
-        <td class="follow-table__button"><%= render 'users/relationships/follow_button', user: user %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </table>
+<% end %>
