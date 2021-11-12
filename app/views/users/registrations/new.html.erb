@@ -9,7 +9,7 @@
     </div>
 
      <div>
-      <p class="form__name"><%= f.label :ユーザーネーム %></p>
+      <p class="form__name"><%= f.label :ユーザーネーム（15文字以内） %></p>
       <%= f.text_field :nickname, autofocus: true, class: "form__field" %>
     </div>
 
@@ -19,22 +19,22 @@
     </div>
 
     <div>
-      <p class="form__name"><%= f.label :email %></p>
+      <p class="form__name"><%= f.label :メールアドレス %></p>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__field" %>
     </div>
 
     <div>
       <p class="form__name">
-        <%= f.label :password %>
+        <%= f.label :パスワード %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
         <% end %>
       </p>
       <%= f.password_field :password, autocomplete: "new-password", class: "form__field" %>
     </div>
 
     <div>
-      <p class="form__name"><%= f.label :password_confirmation %></p>
+      <p class="form__name"><%= f.label :パスワード（確認） %></p>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form__field" %>
     </div>
 

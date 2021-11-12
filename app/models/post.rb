@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   attachment :post_image
 
+  #画像がない場合投稿できない
   validates :post_image, presence: true
 
   #検索機能のメソッド
