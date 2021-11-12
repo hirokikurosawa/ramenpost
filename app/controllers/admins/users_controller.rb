@@ -1,6 +1,6 @@
 class Admins::UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.page(params[:page]).per(30)
   end
 
   def show
@@ -16,7 +16,7 @@ class Admins::UsersController < ApplicationController
     @user.update(user_params)
     redirect_to admins_user_path(@user)
   end
-  
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy

@@ -1,6 +1,6 @@
 class Users::PostsController < ApplicationController
   def index
-    @posts = Post.all.order(created_at: :desc).page(params[:page]).limit(50)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def new

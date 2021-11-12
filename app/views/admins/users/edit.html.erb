@@ -27,7 +27,7 @@
       </div>
       <%= f.file_field :icon, class: "form__field" %>
     </div>
-    <%= link_to "アカウント削除する", admins_user_path(@user), method: :delete,  "data-confirm" => "本当に退会しますか？" %>
+    <%= link_to "アカウント削除する", admins_user_path(@user), method: :delete,  "data-confirm" => "本当に削除しますか？" %>
 
     <div class="form__submit">
       <%= f.submit "保存する" %>
