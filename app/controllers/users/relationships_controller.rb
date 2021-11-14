@@ -1,4 +1,5 @@
 class Users::RelationshipsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     following = current_user.relationships.build(follower_id: params[:user_id])
