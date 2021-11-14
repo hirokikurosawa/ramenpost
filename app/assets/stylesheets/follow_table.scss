@@ -9,21 +9,18 @@
   border-spacing: 0;
   &__icon{
     margin-left: 10px;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     border-radius: 100px;
     overflow: hidden
   }
   &__name{
-    width: 400px;
+    width: 420px;
     margin-left: 5px;
     display: inline-block;
-    font-size: 18px;
+    font-size: 25px;
     border-bottom: solid 2px #fb5144;
   }
   &__button{
-    width: 200px;
-    text-align: center;
-    font-size: 15px;
   }
 }

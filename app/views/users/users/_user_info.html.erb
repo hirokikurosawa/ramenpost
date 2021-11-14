@@ -1,12 +1,12 @@
 <%# user情報の部分テンプレート %>
 <div class="user-info">
   <% if user.icon? %>
-    <img src=<%= user.icon %> class="icon">
+    <img src=<%= user.icon %> class="user-info__icon">
   <% else %>
-    <image src="/assets/default.png" class="icon" %>
+    <image src="/assets/default.png" class="user-info__icon" %>
   <% end %>
   <h1 class="user-info__name"><%= user.nickname %></h1>
-  <h6 class="user-info__intro"><%= user.introduction %></h6>
+  <p class="user-info__intro"><%= user.introduction %></p>
   <div class="user-info__link">
     <%= link_to followings_user_path(user) do %>
       フォロー<%= user.followings.count %> 人

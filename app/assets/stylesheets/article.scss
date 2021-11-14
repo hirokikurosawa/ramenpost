@@ -12,12 +12,13 @@
   &__name{
     position: relative;
     margin-left: 85px;
-    font-size: 25px;
+    font-size: 30px;
   }
   &__intro{
     margin: 10px 10% 10px 10%;
     width: 80%;
     word-wrap: break-word;
+    font-size: 18px;
   }
   &__image{
     margin: 35px 0 5px 0;
@@ -32,5 +33,6 @@
   &__detail{
     margin: 0px 10% 0px 10%;
     text-decoration: none;
+    font-size: 18px;
   }
 }

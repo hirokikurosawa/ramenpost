@@ -4,14 +4,30 @@
   box-sizing: border-box;
 }
 .follow-button{
-    font-size: 12px;
-    display: block;
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    border-radius: 10vh;
-    margin: 0 auto;
+    &__red{
+      width: 160px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      color: #fff;
+      background-color: #CC0000;
+      border-radius: 10vh;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+    &__blue{
+      width: 160px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      color: #fff;
+      background-color: #0000FF;
+      border-radius: 10vh;
+      margin: 0 auto;
+      font-size: 15px;
+    }
 }

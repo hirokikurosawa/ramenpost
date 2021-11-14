@@ -15,9 +15,7 @@
   <body>
     <header class="header" style="z-index:10000">
       <div>
-        <%= link_to root_path, class: "header__title" do %>
-          ラーメンPOST
-        <% end %>
+        <%= link_to "ラーメンPOST", root_path, class: "header__title" %>
       </div>
       <% if user_signed_in? %>
         <div class="header__search-form">
@@ -45,10 +43,10 @@
             <%= link_to "ホーム", following_posts_posts_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "新規投稿", new_post_path, class: "header__item" %>
+            <%= link_to "最新投稿", posts_path, class: "header__item" %>
           </li>
           <li>
-            <%= link_to "最新投稿一覧", posts_path, class: "header__item" %>
+            <%= link_to "新規投稿", new_post_path, class: "header__item" %>
           </li>
           <li>
             <%= link_to "マイページ", user_path(current_user.id), class: "header__item" %>
