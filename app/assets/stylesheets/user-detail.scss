@@ -28,3 +28,9 @@
     text-align: right;
   }
 }
+
+@media screen and (max-width:768px) {
+  .user-detail{
+    width: 100%;
+  }
+}

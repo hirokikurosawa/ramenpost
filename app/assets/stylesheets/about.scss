@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 .about{
-  margin: 100px 10%;
+  margin: 100px auto;
+  width: 700px;
   &__title{
     text-align: center;
   }
@@ -13,5 +14,19 @@
   }
   &__list{
     margin: 0px 10%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .about{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .about{
+    &__title{
+      font-size: 25px;
+    }
   }
 }

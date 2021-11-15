@@ -21,6 +21,18 @@
     font-size: 25px;
     border-bottom: solid 2px #fb5144;
   }
-  &__button{
+}
+
+@media screen and (max-width:768px) {
+  .follow-table{
+    width: 100%;
+    &__icon{
+      margin-left: 5px;
+      width: 35px;
+      height: 35px;
+    }
+    &__name{
+      width: 200px;
+    }
   }
 }
