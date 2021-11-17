@@ -1,24 +1,45 @@
-# README
+# ラーメンPOST
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ラーメン専門の画像をメインとしたSNSサイトです。
+このSNSサイトにラーメンの画像を投稿することで食べたラーメンの記録になります。
+また、美味しそうなラーメンを画像で直感的に見つけることができます。
+好みが似ている人や行動圏が近い人をフォローして活用します。
 
-Things you may want to cover:
+### サイトテーマ
+ラーメン専門のSNSサイト
 
-* Ruby version
+### テーマを選んだ理由
+主なSNSサイトは、様々なジャンルの投稿ができるという性質上、専門性にかける部分があると考えました。例えば、キーワードで検索した際に不要な情報がヒットしてしまったり、フォローしているユーザが自分の興味のないジャンルの投稿をすることがあります。また、SNSサイトで食べ物の投稿している人をよく見かけます。その中でもラーメンは、投稿数の多い食べ物の一つです。このことから、ラーメン専門のSNSがあればより専門的な情報を共有できるのではないかと考えました。
 
-* System dependencies
+### ターゲットユーザ
+* 全国のラーメン好きな方
+* 美味しいものを共有したい方
+* これからラーメンを食べようとしている方
 
-* Configuration
+### 主な利用シーン
+* 自分の食べたラーメンの記録
+* ラーメン店でメニューを決める時
+* 美味しそうなラーメンを探す時
+* お腹が空いた時
 
-* Database creation
+## 設計書
+ER図
+（https://drive.google.com/file/d/1LoSbhP9bTPSdZBRZNAt4Q4-I-QsdZhNC/view?usp=sharing）
+テーブル定義書
+（https://docs.google.com/spreadsheets/d/1AQbAdD5Ih7kLXfjkltBWiRVpMJAaUYlgOdXbZtwc6BU/edit#gid=0）
+アプリケーション詳細設計書
+（https://docs.google.com/spreadsheets/d/1HC3ocae29bYuHPWomRGtzT56p1NR3-YzQMruzU78cLk/edit#gid=0）
 
-* Database initialization
+## チャレンジ要素一覧
+（https://docs.google.com/spreadsheets/d/1WHQ0EamiS0NIJwcbvuYoPxIVMWuIKvlFoZhwCwOKtZE/edit#gid=0）
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+* ICOOON MONO (https://icooon-mono.com/)
