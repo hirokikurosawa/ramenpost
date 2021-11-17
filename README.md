@@ -24,11 +24,11 @@
 * お腹が空いた時
 
 ## 設計書
-ER図
-（https://drive.google.com/file/d/1LoSbhP9bTPSdZBRZNAt4Q4-I-QsdZhNC/view?usp=sharing）
-テーブル定義書
-（https://docs.google.com/spreadsheets/d/1AQbAdD5Ih7kLXfjkltBWiRVpMJAaUYlgOdXbZtwc6BU/edit#gid=0）
-アプリケーション詳細設計書
+ER図<br>
+（https://drive.google.com/file/d/1LoSbhP9bTPSdZBRZNAt4Q4-I-QsdZhNC/view?usp=sharing）<br>
+テーブル定義書<br>
+（https://docs.google.com/spreadsheets/d/1AQbAdD5Ih7kLXfjkltBWiRVpMJAaUYlgOdXbZtwc6BU/edit#gid=0）<br>
+アプリケーション詳細設計書<br>
 （https://docs.google.com/spreadsheets/d/1HC3ocae29bYuHPWomRGtzT56p1NR3-YzQMruzU78cLk/edit#gid=0）
 
 ## チャレンジ要素一覧
