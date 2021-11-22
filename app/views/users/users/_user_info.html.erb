@@ -1,9 +1,9 @@
 <%# user情報の部分テンプレート %>
 <div class="user-info">
   <% if user.icon? %>
-    <img src=<%= user.icon %> class="user-info__icon">
+    <%= image_tag user.icon.url, class:"user-info__icon" %>
   <% else %>
-    <image src="/assets/default.png" class="user-info__icon" %>
+    <%= image_tag 'default.png', class: 'user-info__icon' %>
   <% end %>
   <h1 class="user-info__name"><%= user.nickname %></h1>
   <p class="user-info__intro"><%= user.introduction %></p>

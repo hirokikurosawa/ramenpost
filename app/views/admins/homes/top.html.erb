@@ -2,9 +2,9 @@
 <% @posts.each do |post| %>
   <div class="article">
     <% if post.user.icon? %>
-      <img src=<%= post.user.icon %> class="icon">
+      <%= image_tag post.user.icon.url, class:"icon" %>
     <% else %>
-      <image src="/assets/default.png" class="icon" %>
+      <%= image_tag 'default.png', class: 'icon' %>
     <% end %>
     <p class="article__name">
       <%= link_to admins_user_path(post.user) do %>

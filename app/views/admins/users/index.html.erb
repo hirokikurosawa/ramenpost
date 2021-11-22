@@ -6,9 +6,9 @@
         <th class="user-table__id"><%= user.id %></th>
         <td class="user-table__icon-space">
           <% if user.icon? %>
-            <img src=<%= user.icon %> class="user-table__icon">
+            <%= image_tag user.icon.url, class:"user-table__icon" %>
           <% else %>
-            <image src="/assets/default.png" class="user-table__icon" %>
+            <%= image_tag 'default.png', class: 'user-table__icon' %>
           <% end %>
         </td>
         <td class="user-table__name">

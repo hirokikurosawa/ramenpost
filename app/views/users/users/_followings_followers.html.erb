@@ -4,9 +4,9 @@
     <tr>
       <td class="user-table__user">
         <% if user.icon? %>
-          <img src=<%= user.icon %> class="follow-table__icon">
+          <%= image_tag user.icon.url, class:"follow-table__icon" %>
         <% else %>
-          <image src="/assets/default.png" class="follow-table__icon" %>
+          <%= image_tag 'default.png', class: 'follow-table__icon' %>
         <% end %>
       </td>
       <td class="follow-table__name">

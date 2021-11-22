@@ -1,9 +1,9 @@
 <h1 class="title">ユーザー詳細画面</h1>
 <div class="user-detail">
   <% if @user.icon? %>
-    <img src=<%= @user.icon %> class="user-detail__icon">
+    <%= image_tag @user.icon.url, class:"user-detail__icon" %>
   <% else %>
-    <image src="/assets/default.png" class="user-detail__icon" %>
+    <%= image_tag 'default.png', class: 'user-detail__icon' %>
   <% end %>
   <div class="user-detail__nickname"><%= @user.nickname %></div>
   <div class="user-detail__item">名前：<%= @user.name %></div>

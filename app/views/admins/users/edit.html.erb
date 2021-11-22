@@ -20,9 +20,9 @@
       <p class="form__name"><%= f.label :プロフィール写真 %></p>
          <div>
         <% if @user.icon? %>
-          <img src=<%= @user.icon %> class="form__icon">
+          <%= image_tag @user.icon.url, class:"form__icon" %>
         <% else %>
-          <image src="/assets/default.png" class="form__icon" %>
+          <%= image_tag 'default.png', class: 'form__icon' %>
         <% end %>
       </div>
       <%= f.file_field :icon, class: "form__field" %>
