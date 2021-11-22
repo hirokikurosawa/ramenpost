@@ -1,10 +1,6 @@
 <%# user情報の部分テンプレート %>
 <div class="user-info">
-  <% if user.icon? %>
-    <%= image_tag user.icon.url, class:"user-info__icon" %>
-  <% else %>
-    <%= image_tag 'default.png', class: 'user-info__icon' %>
-  <% end %>
+  <%= attachment_image_tag user, :profile_image, format: 'jpg', fallback: "default.png", class: "user-info__icon" %>
   <h1 class="user-info__name"><%= user.nickname %></h1>
   <p class="user-info__intro"><%= user.introduction %></p>
   <div class="user-info__link">

@@ -1,10 +1,6 @@
 <h1 class="title">ユーザー詳細画面</h1>
 <div class="user-detail">
-  <% if @user.icon? %>
-    <%= image_tag @user.icon.url, class:"user-detail__icon" %>
-  <% else %>
-    <%= image_tag 'default.png', class: 'user-detail__icon' %>
-  <% end %>
+  <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "default.png", class: "user-detail__icon" %>
   <div class="user-detail__nickname"><%= @user.nickname %></div>
   <div class="user-detail__item">名前：<%= @user.name %></div>
   <div class="user-detail__item">メールアドレス：<%= @user.email %></div>

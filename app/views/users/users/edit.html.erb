@@ -18,14 +18,8 @@
 
     <div>
       <p class="form__name"><%= f.label :プロフィール写真 %></p>
-         <div>
-        <% if @user.icon? %>
-          <%= image_tag @user.icon.url, class:"form__icon" %>
-        <% else %>
-          <%= image_tag 'default.png', class: 'form__icon' %>
-        <% end %>
-      </div>
-      <%= f.file_field :icon, class: "form__field" %>
+      <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "default.png", class: "form__icon" %>
+      <%= f.attachment_field :profile_image, class: "form__field" %>
     </div>
 
     <div class="form__submit">

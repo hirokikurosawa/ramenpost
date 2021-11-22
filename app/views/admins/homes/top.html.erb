@@ -1,11 +1,7 @@
 <h1 class="title">最新投稿</h1>
 <% @posts.each do |post| %>
   <div class="article">
-    <% if post.user.icon? %>
-      <%= image_tag post.user.icon.url, class:"icon" %>
-    <% else %>
-      <%= image_tag 'default.png', class: 'icon' %>
-    <% end %>
+    <%= attachment_image_tag post.user, :profile_image, format: 'jpg', fallback: "default.png", class: "icon" %>
     <p class="article__name">
       <%= link_to admins_user_path(post.user) do %>
         <%= post.user.nickname %>

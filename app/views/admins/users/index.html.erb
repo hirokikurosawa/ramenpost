@@ -5,11 +5,7 @@
       <tr>
         <th class="user-table__id"><%= user.id %></th>
         <td class="user-table__icon-space">
-          <% if user.icon? %>
-            <%= image_tag user.icon.url, class:"user-table__icon" %>
-          <% else %>
-            <%= image_tag 'default.png', class: 'user-table__icon' %>
-          <% end %>
+          <%= attachment_image_tag user, :profile_image, format: 'jpg', fallback: "default.png", class: "user-table__icon" %>
         </td>
         <td class="user-table__name">
           <%= link_to admins_user_path(user) do %>
