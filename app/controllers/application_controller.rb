@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    following_posts_posts_path
+    case resource
+    when Admin
+      admins_path
+    when User
+      following_posts_posts_path
+    end
   end
 
   protected
