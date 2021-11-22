@@ -8,7 +8,7 @@ class Users::UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user == current_user　#違うユーザーのidをURLに直接入力しても編集画面に遷移しなくなる
+    if @user == current_user
       render "edit"
     else
       redirect_to root_path
