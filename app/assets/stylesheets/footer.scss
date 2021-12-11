@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footer{
+  padding: 10px 4% 30px;
+  bottom: 0;
+  width: 100%;
+  background-color: #ff7f50;
+  &__list{
+    list-style: none;
+    display: flex;
+  }
+  &__item{
+    margin-right: 25px;
+    color: #fff;
+  }
+}

@@ -4,7 +4,7 @@
     <title>ラーメンPOST</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/6dda0aaec3.js" crossorigin="anonymous"></script>
@@ -71,5 +71,15 @@
       </nav>
     </header>
     <%= yield %>
+    <footer class="footer">
+      <ul class="footer__list">
+        <li>
+          <%= link_to "ラーメンPOST", root_path, class: "footer__item" %>
+        </li>
+        <li>
+          <%= link_to "サイト案内", about_path, class: "footer__item" %>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
