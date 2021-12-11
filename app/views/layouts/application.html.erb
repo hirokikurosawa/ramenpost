@@ -15,71 +15,73 @@
   </head>
 
   <body>
-    <header class="header" style="z-index:10000">
-      <div>
-        <%= link_to "ラーメンPOST", root_path, class: "header__title" %>
-      </div>
-      <% if user_signed_in? %>
-        <div class="header__search-form">
-          <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
-            <%= f.text_field :keyword, value: @keyword %>
-            <%= f.submit "検索" %>
-          <% end %>
+    <div class="body">
+      <header class="header" style="z-index:10000">
+        <div>
+          <%= link_to "ラーメンPOST", root_path, class: "header__title" %>
         </div>
-      <% end %>
-
-      <nav class="header__nav">
-        <ul class="header__list">
-          <% if admin_signed_in? %>
+        <% if user_signed_in? %>
+          <div class="header__search-form">
+            <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+              <%= f.text_field :keyword, value: @keyword %>
+              <%= f.submit "検索" %>
+            <% end %>
+          </div>
+        <% end %>
+  
+        <nav class="header__nav">
+          <ul class="header__list">
+            <% if admin_signed_in? %>
+            <li>
+              <%= link_to "最新投稿一覧", admins_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "ユーザ一覧", admins_users_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header__item", "data-confirm" => "ログアウトしますか？" %>
+            </li>
+            <% elsif user_signed_in? %>
+            <li>
+              <%= link_to "ホーム", following_posts_posts_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "最新投稿", posts_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "新規投稿", new_post_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "マイページ", user_path(current_user.id), class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__item", "data-confirm" => "ログアウトしますか？" %>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "サイト案内", about_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "新規登録", new_user_registration_path, class: "header__item" %>
+            </li>
+            <li>
+              <%= link_to "ログイン", new_user_session_path, class: "header__item" %>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
+      <%= yield %>
+      <footer class="footer">
+        <ul class="footer__list">
           <li>
-            <%= link_to "最新投稿一覧", admins_path, class: "header__item" %>
+            <%= link_to "ラーメンPOST", root_path, class: "footer__item" %>
           </li>
           <li>
-            <%= link_to "ユーザ一覧", admins_users_path, class: "header__item" %>
+            <%= link_to "サイト案内", about_path, class: "footer__item" %>
           </li>
-          <li>
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header__item", "data-confirm" => "ログアウトしますか？" %>
-          </li>
-          <% elsif user_signed_in? %>
-          <li>
-            <%= link_to "ホーム", following_posts_posts_path, class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "最新投稿", posts_path, class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "新規投稿", new_post_path, class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "マイページ", user_path(current_user.id), class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__item", "data-confirm" => "ログアウトしますか？" %>
-          </li>
-          <% else %>
-          <li>
-            <%= link_to "サイト案内", about_path, class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "新規登録", new_user_registration_path, class: "header__item" %>
-          </li>
-          <li>
-            <%= link_to "ログイン", new_user_session_path, class: "header__item" %>
-          </li>
-          <% end %>
         </ul>
-      </nav>
-    </header>
-    <%= yield %>
-    <footer class="footer">
-      <ul class="footer__list">
-        <li>
-          <%= link_to "ラーメンPOST", root_path, class: "footer__item" %>
-        </li>
-        <li>
-          <%= link_to "サイト案内", about_path, class: "footer__item" %>
-        </li>
-      </ul>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
