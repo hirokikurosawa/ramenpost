@@ -1,6 +1,6 @@
 class Users::PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @posts = Post.all.page(params[:page]).per(20)
   end
@@ -26,8 +26,13 @@ class Users::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to user_path(current_user.id)
+    @user = User.find(@post[:user_id])
+    if @user == current_user
+      @post.destroy
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def following_posts
