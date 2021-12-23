@@ -39,3 +39,11 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width:425px){
+  .user-table{
+    &__name{
+      font-size: 14px;
+    }
+  }
+}

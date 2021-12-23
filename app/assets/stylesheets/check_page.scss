@@ -51,3 +51,12 @@
     }
   }
 }
+
+@media screen and (max-width:425px){
+  .check-page{
+    &__text{
+      margin: 20px auto;
+      font-size: 14px;
+    }
+  }
+}

@@ -17,3 +17,11 @@
     color: #fff;
   }
 }
+@media screen and (max-width:425px){
+  .footer{
+    padding: 5px 4% 10px;
+    &__item{
+      font-size: 8px;
+    }
+  }
+}

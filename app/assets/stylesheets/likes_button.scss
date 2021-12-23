@@ -10,3 +10,8 @@
     color: red;
   }
 }
+@media screen and (max-width:425px) {
+  .likes-button {
+    font-size: 20px;
+  }
+}

@@ -2,7 +2,7 @@
 <% users.each do |user| %>
   <table  class="follow-table">
     <tr>
-      <td class="user-table__user">
+      <td class="follow-table__user">
         <%= attachment_image_tag user, :profile_image, format: 'jpg', fallback: "default.png", class: "follow-table__icon" %>
       </td>
       <td class="follow-table__name">
@@ -10,7 +10,7 @@
           <%= user.nickname %>
         <% end %>
       </td>
-      <td class="user-table__button"><%= render 'users/relationships/follow_button', user: user %></td>
+      <td class="follow-table__button"><%= render 'users/relationships/follow_button', user: user %></td>
     </tr>
   </table>
 <% end %>

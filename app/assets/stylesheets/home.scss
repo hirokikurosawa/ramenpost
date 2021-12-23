@@ -26,3 +26,14 @@
     margin: 0 auto;
   }
 }
+@media screen and (max-width:425px){
+  .home{
+    margin: 80px 10%;
+    &__title{
+      font-size: 24px;
+    }
+    &__text{
+      text-align: left;
+    }
+  }
+}

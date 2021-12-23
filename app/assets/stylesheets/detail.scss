@@ -21,7 +21,7 @@
   &__intro{
     margin: 10px auto;
     width: 600px;
-    font-size: 25px;
+    font-size: 16px;
     word-wrap: break-word;
   }
   &__date{
@@ -49,6 +49,9 @@
 @media screen and (max-width:768px) {
   .detail{
     width: 90%;
+    &__name{
+      width: auto;
+    }
     &__title{
     text-align: center;
     }
@@ -57,6 +60,21 @@
     }
     &__intro{
       width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width:425px) {
+  .detail{
+    margin-top: 80px;
+    &__title{
+      font-size: 24px;
+    }
+    &__name{
+      font-size: 24px;
+    }
+    &__image{
+      margin: 10px 0;
     }
   }
 }

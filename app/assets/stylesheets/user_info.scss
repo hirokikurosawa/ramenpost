@@ -23,9 +23,8 @@
   }
   &__intro{
     margin: 125px 20px 20px 20px;
-    font-size: 15px;
+    font-size: 14px;
     clear: both;
-
   }
   &__link{
     float: left;
@@ -46,13 +45,41 @@
       font-size: 28px;
     }
     &__intro{
-      font-size: 15px;
+      font-size: 14px;
     }
     &__link{
-      font-size: 15px;
+      font-size: 20px;
     }
     &__button{
-      padding-right: 15px;
+      padding-right: 14px;
+    }
+  }
+}
+
+@media screen and (max-width:425px){
+  .user-info{
+    padding: 20px 20px 0px 20px;
+    &__name{
+      font-size: 24px;
+      margin: 20px;
+    }
+    &__intro{
+      font-size: 14px;
+      margin-top: 90px;
+    }
+    &__link{
+      font-size: 14px;
+      width: 50%;
+      text-align: left;
+      padding-bottom: 14px;
+    }
+    &__icon{
+      width: 60px;
+    height: 60px;
+    }
+    &__button{
+      padding-right: 14px;
+      padding-bottom: 14px;
     }
   }
 }

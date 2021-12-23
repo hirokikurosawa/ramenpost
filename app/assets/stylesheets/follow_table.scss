@@ -36,3 +36,11 @@
     }
   }
 }
+
+@media screen and (max-width:425px) {
+  .follow-table{
+    &__name{
+      font-size: 16px;
+    }
+  }
+}
