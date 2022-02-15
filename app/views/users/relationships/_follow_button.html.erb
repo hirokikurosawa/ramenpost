@@ -1,12 +1,12 @@
 <% if user == current_user %>
 <% else %>
-  <div class="follow-button">
+  <div class="follow-button" id="follow_button_<%= user.id %>">
     <% if user.is_followed_by?(current_user) %>
-      <%=link_to user_relationships_path(user), method: :delete do %>
+      <%=link_to user_relationships_path(user), method: :delete, remote: true do %>
         <div class="follow-button__red">フォロー解除</div>
       <% end %>
     <% else %>
-      <%=link_to user_relationships_path(user), method: :post do %>
+      <%=link_to user_relationships_path(user), method: :post, remote: true do %>
         <div class="follow-button__blue">フォロー</div>
       <% end %>
     <% end %>
